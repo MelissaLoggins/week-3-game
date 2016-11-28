@@ -1,4 +1,41 @@
 body {
-    background-image: url("assets/images/bg.jpg");
-    background-color: #cccccc;
+    /*background-color: #f9f9f4;*/
+    background-image: url(http://www.freeppt.net/background/textures-notebook-paper-wallpapers-backgrounds-for-powerpoint.jpg);
+}
+
+h1 {
+	background-image: url(https://www.guitarchalk.com/wp-content/uploads/2015/10/Paul-Reed-Smith-SE-Torero-Electric-Guitar-Banner.jpg);
+	/*background-color: white;*/
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 75px;
+	padding-bottom: 75px;
+	font-family: 'Chelsea Market', cursive;
+	color: #50A6C2;
+	font-size: 70px;
+	text-align: center;
+
+}
+h2 {
+	font-family: 'Nothing You Could Do', cursive;
+	margin:0;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 50px;
+}
+
+h3 {
+	font-family: 'Nothing You Could Do', cursive;
+	margin:0;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	font-size: 35px;
+}
+
+.words {
+	text-align: center;
+	margin: 0;
+	padding-left: 40px;
 }

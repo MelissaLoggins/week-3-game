@@ -2,14 +2,48 @@
 <html>
 <head>
 	<title>Hangman</title>
-	<img src="assets/images/bg.jpg"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- <img src="assets/images/bg.jpg"> -->
+	<script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+	
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Chelsea+Market|Nothing+You+Could+Do');
+	</style>
 </head>
-<h1>Battle of the Bands Hangman</h1>
-<h3>Type a letter to get started.</h3>
-<h3>Current Word:</h3>
-<h3>Number of Guess Remaining:</h3>
-<h3>Letters Previously Guessed:</h3>
+
 <body>
 
+
+<h1>Battle of the Bands Hangman</h1>
+<h2><strong>Type a letter to get started!</strong></h2>
+<h3>Current Word:</h3>
+
+
+<p id="words"></p>
+
+
+
+<h3>Number of Guesses Remaining:</h3>
+<h3>Letters Previously Guessed:</h3>
+
+
+
+<script type="game.js">
+<script>
+document.getElementById("words").innerHTML = answerArray;
+
+
+	// The computer has six bands that are randomly selected for the user.
+	// The user gets 6 tries to guess the current word.
+	// The user choses a letter.
+	// The computer decides if that letter is in the word and return a loss of life or turns a blank into the letter chosen.
+	// The user gets six tries to guess the correct band before the game ends.
+	// After six guesses, and alert pops up to play again and the game begins again.
+	// If a word is completed, I hope to play a song from the band, and, at the very least have a photo show up of an album cover.
+
+</script>
 </body>
 </html>
