@@ -1,8 +1,17 @@
 
-var words = ["yeah yeah yeahs", "scissor sisters", "ween", "gin blossoms", "the clash", "depeche mode"];
+var bands = ["yeah yeah yeahs", "scissor sisters", "ween", "gin blossoms", "the clash", "depeche mode"];
 // var dashLetter = ["_", "_", "_", "_", "_", "_", "_" "_", "_", "_", "_", "_", "_"]
+// console.log(words[0]);
+// console.log(words[1]);
+// console.log(words[2]);
+// console.log(words[3]);
+// console.log(words[4]);
+// console.log(words[5]);
 
-var word = words[Math.floor(Math.random() * words.length)];
+var length = bands.length
+console.log(length);
+
+var word = bands[Math.floor(Math.random() * bands.length)];
 
 var answerArray = [];
 
@@ -22,7 +31,7 @@ var remainingLetters = word.length;
 
       // Show the player their progress
       // I copied code that had prompts and alerts and I'm trying to change them to show onscreen instead of popping up.
-      println(answerArray.join(" "));
+      	alert(answerArray.join(" "));
 
       // Get a guess from the player
 
