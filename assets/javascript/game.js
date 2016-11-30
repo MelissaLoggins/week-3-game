@@ -1,107 +1,159 @@
+  var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  var wins = 0;
+  var losses = 0;
+  var guesses = 0;
+  var lives = 6;
+  var display = document.querySelector("#game");
 
-var bands = ["yeah yeah yeahs", "scissor sisters", "ween", "gin blossoms", "the clash", "depeche mode"];
-// var dashLetter = ["_", "_", "_", "_", "_", "_", "_" "_", "_", "_", "_", "_", "_"]
-// console.log(words[0]);
-// console.log(words[1]);
-// console.log(words[2]);
-// console.log(words[3]);
-// console.log(words[4]);
-// console.log(words[5]);
+  function displayResults(){
+    var string = '<p>Wins: ' + wins; + '</p>';
+    string += '<p>Losses: ' + losses; + '</p>';
+    string += '<p>Guesses Left: ' + lives; + '</p>';
+    string += '<p>Your Guesses: ' + guesses; + '</p>';
+    display.innerHTML = string;
+  }
 
-var length = bands.length
-console.log(length);
+document.onkeyup = function(event){
+    var key = event.key;
 
-var word = bands[Math.floor(Math.random() * bands.length)];
+    function resetGame() {
+      guesses = 0;
+      lives = 6;
 
-var answerArray = [];
+}
 
- for (var i = 0; i < word.length; i++) {
+    
+    var computerChoice = options[Math.floor(Math.random() * options.length)];
 
-    answerArray[i] = "_"; 
+    if (guesses < 6) {
+      if (key === computerChoice) {
+          alert("OMG! You're totally psychic!");
+          wins++;
+          guesses++;
+          displayResults();
+          resetGame();
+      }
+      else {
+        lives--;
+        guesses++;
+        displayResults();
+
+      }
+    }
+    else {
+      alert("Dude. You're so not psychic.");
+      losses++;
+      resetGame();
+    }
 
   }
 
-var remainingLetters = word.length;
 
 
 
-// The game loop
+// var bands = ["yeah yeah yeahs", "scissor sisters", "ween", "gin blossoms", "the clash", "depeche mode"];
+// // var dashLetter = ["_", "_", "_", "_", "_", "_", "_" "_", "_", "_", "_", "_", "_"]
+// // console.log(words[0]);
+// // console.log(words[1]);
+// // console.log(words[2]);
+// // console.log(words[3]);
+// // console.log(words[4]);
+// // console.log(words[5]);
 
-    while (remainingLetters > 0) {
+// var length = bands.length
+// console.log(length);
 
-      // Show the player their progress
-      // I copied code that had prompts and alerts and I'm trying to change them to show onscreen instead of popping up.
-      	alert(answerArray.join(" "));
+// var word = bands[Math.floor(Math.random() * bands.length)];
 
-      // Get a guess from the player
+// var answerArray = [];
 
-      var guess = prompt("Guess a letter, or click Cancel to stop playing.");
+//  for (var i = 0; i < word.length; i++) {
 
-      if (guess === null) {
+//     answerArray[i] = "_"; 
 
-        // Exit the game loop
+//   }
 
-        break;
+// var remainingLetters = word.length;
 
-      } else if (guess.length !== 1) {
 
-        alert("Please enter a single letter.");
 
-      } else {
+// // The game loop
 
-        // Update the game state with the guess
+//     while (remainingLetters > 0) {
 
-        for (var j = 0; j < word.length; j++) {
+//       // Show the player their progress
+//       // I copied code that had prompts and alerts and I'm trying to change them to show onscreen instead of popping up.
+//       	alert(answerArray.join(" "));
 
-          if (word[j] === guess) {
+//       // Get a guess from the player
 
-            answerArray[j] = guess;
+//       var guess = prompt("Guess a letter, or click Cancel to stop playing.");
 
-            remainingLetters--;
+//       if (guess === null) {
 
-          }
+//         // Exit the game loop
 
-        }
+//         break;
 
-      }
+//       } else if (guess.length !== 1) {
 
-    // The end of the game loop
+//         alert("Please enter a single letter.");
 
-    }
+//       } else {
 
-    // Show the answer and congratulate the player
+//         // Update the game state with the guess
 
-    alert(answerArray.join(" "));
+//         for (var j = 0; j < word.length; j++) {
 
-    alert("Good job! The answer was " + word);
+//           if (word[j] === guess) {
+
+//             answerArray[j] = guess;
+
+//             remainingLetters--;
+
+//           }
+
+//         }
+
+//       }
+
+//     // The end of the game loop
+
+//     }
+
+//     // Show the answer and congratulate the player
+
+//     alert(answerArray.join(" "));
+
+//     alert("Good job! The answer was " + word);
 
     
 
-// DEBUGG My code before I found better code to help me get started. Still very lost.
-// var randInt = randomGenerator(0, array.length - 1);
-// var item = array[randInt];
-// var textbox = document.getElementById("textbox_id").value = randInt;
-// var blank = _  ...not really sure how to get those blanks in.
-// for (var i = array.length - 1; i >= 0; i--) {
-	// arr[i]
+// // DEBUGG My code before I found better code to help me get started. Still very lost.
+// // var randInt = randomGenerator(0, array.length - 1);
+// // var item = array[randInt];
+// // var textbox = document.getElementById("textbox_id").value = randInt;
+// // var blank = _  ...not really sure how to get those blanks in.
+// // for (var i = array.length - 1; i >= 0; i--) {
+// 	// arr[i]
 
-// }
+// // }
  
-// if (letter guessed is correct) {
-	// document.write ('letter'); 
-// }
-	// else {
-		// looseLife
-	// }
-// name = array[(int) (Math.random() * array.length)];
-// System.out.println(name);
+// // if (letter guessed is correct) {
+// 	// document.write ('letter'); 
+// // }
+// 	// else {
+// 		// looseLife
+// 	// }
+// // name = array[(int) (Math.random() * array.length)];
+// // System.out.println(name);
 
-// $(document).ready(function () { 
-	// $().onkeydown("split" fuction() {
-		// alert("I'm working");
-	// })
+// // $(document).ready(function () { 
+// 	// $().onkeydown("split" fuction() {
+// 		// alert("I'm working");
+// 	// })
     
-    // });
+//     // });
     
 
 
